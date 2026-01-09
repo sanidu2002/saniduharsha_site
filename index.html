@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- CSS Reset & Variables --- */
+        :root {
+            --primary-color: #2563eb;    /* Bold Blue */
+            --secondary-color: #1e293b;  /* Dark Slate */
+            --bg-light: #f3f4f6;         /* Light Gray */
+            --text-dark: #333;
+            --text-light: #fff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- Navigation --- */
+        .navbar {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            /* Background image with a dark overlay */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 5px;
+            margin: 0 5px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn.primary {
+            background: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .btn.primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn.secondary {
+            background: transparent;
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+        }
+
+        .btn.secondary:hover {
+            background: var(--text-light);
+            color: var(--text-dark);
+        }
+
+        /* --- General Section Styling --- */
+        .section {
+            padding: 60px 0;
+        }
+
+        .bg-light {
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+
+        /* --- About Grid --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .skills-list {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .skills-list li {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* --- Projects Grid --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-small {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* --- Contact & Footer --- */
+        .contact-text {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        #contact {
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            font-size: 2rem;
+            margin: 0 15px;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        footer {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none; /* Simple hide for mobile tutorial purposes */
+            }
+        }
+    </style>
+    </head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">MyPortfolio.</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Hello, I'm <span class="highlight">Sanidu Harsha</span></h2>
+                <p>A Creative Web Developer & Designer</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary">View My Work</a>
+                    <a href="#contact" class="btn secondary">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I am Sanidu Harsha, an undergraduate software engineering student following a degree from the University of Westminster at the Informatics Institute of Technology, Sri Lanka. I am currently learning the fundamentals of web development, with a focus on HTML and CSS, and I am passionate about building practical projects that strengthen my technical skills. I have a strong interest in technology, innovation, and entrepreneurship, and I aim to continuously improve my knowledge while preparing for a career in the software industry.</p>
+                    <ul class="skills-list">
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript</li>
+                        <li>UI/UX Design</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="my.jpg" alt="Profile Picture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Project Title 1</h3>
+                    <p>A brief description of what this project does and the tech stack used.</p>
+                    <a href="#" class="btn-small">View Code <i class="fab fa-github"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Project Title 2</h3>
+                    <p>A brief description of what this project does and the tech stack used.</p>
+                    <a href="#" class="btn-small">View Code <i class="fab fa-github"></i></a>
+                </div>
+                <div class="project-card">
+                    <h3>Project Title 3</h3>
+                    <p>A brief description of what this project does and the tech stack used.</p>
+                    <a href="#" class="btn-small">View Code <i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-text">I'm currently open to new opportunities. Send me an email!</p>
+            <a href="mailto:saniduharsha2002@gmail.com" class="btn primary">Email Me</a>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/saniduharsha/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/sanidu2002"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

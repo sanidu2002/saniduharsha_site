@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <title>Sanidu Harsha | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* --- CSS Reset & Variables --- */
+        /* --- CSS VARIABLES --- */
         :root {
-            --primary-color: #2563eb;    /* Bold Blue */
-            --secondary-color: #1e293b;  /* Dark Slate */
-            --bg-light: #f3f4f6;         /* Light Gray */
-            --text-dark: #333;
-            --text-light: #fff;
-            --transition: all 0.3s ease;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* --- GENERAL STYLES --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus+Jakarta+Sans', sans-serif;
         }
 
         html {
@@ -29,365 +35,588 @@
         }
 
         body {
+            background-color: var(--dark);
+            color: var(--light);
             line-height: 1.6;
-            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        section {
+            padding: 100px 10%;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        a {
+        h2.section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 50px;
             text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
         }
 
-        ul {
-            list-style: none;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
         }
 
-        /* --- Navigation --- */
-        .navbar {
-            background: var(--secondary-color);
-            color: var(--text-light);
-            padding: 1rem 0;
-            position: sticky;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--glass-border);
+            color: var(--light);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: var(--glass-border);
+            transform: translateY(-3px);
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            position: fixed;
             top: 0;
-            z-index: 1000;
-        }
-
-        .navbar .container {
+            width: 100%;
+            padding: 20px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(15px);
+            padding: 15px 10%;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
         }
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 35px;
         }
 
         .nav-links a {
-            color: var(--text-light);
+            text-decoration: none;
+            color: var(--light);
             font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
             transition: var(--transition);
         }
 
-        .nav-links a:hover {
-            color: var(--primary-color);
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
         }
 
-        /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            /* Background image with a dark overlay */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--text-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .nav-links a.active {
+            color: var(--primary);
         }
 
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .highlight {
-            color: var(--primary-color);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        /* --- Buttons --- */
-        .btn {
-            display: inline-block;
-            padding: 10px 30px;
-            border-radius: 5px;
-            margin: 0 5px;
-            transition: var(--transition);
+        .burger {
+            display: none;
             cursor: pointer;
         }
 
-        .btn.primary {
-            background: var(--primary-color);
-            color: var(--text-light);
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--light);
+            margin: 5px;
+            transition: all 0.3s ease;
         }
 
-        .btn.primary:hover {
-            background: #1d4ed8;
+        /* --- HERO --- */
+        #home {
+            background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.15), transparent),
+                        radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.1), transparent);
         }
 
-        .btn.secondary {
-            background: transparent;
-            border: 2px solid var(--text-light);
-            color: var(--text-light);
+        .hero-content {
+            text-align: left;
+            max-width: 800px;
         }
 
-        .btn.secondary:hover {
-            background: var(--text-light);
-            color: var(--text-dark);
-        }
-
-        /* --- General Section Styling --- */
-        .section {
-            padding: 60px 0;
-        }
-
-        .bg-light {
-            background: var(--bg-light);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-        }
-
-        /* --- About Grid --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-image img {
-            width: 50%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .skills-list {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-
-        .skills-list li {
-            background: var(--secondary-color);
-            color: var(--text-light);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* --- Projects Grid --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .btn-small {
-            display: inline-block;
-            margin-top: 15px;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* --- Exam Section Styling --- */
-        .exam-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .exam-content p {
+        .hero-content h3 {
+            color: var(--primary);
             font-size: 1.2rem;
-            margin-bottom: 25px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
         }
 
-        /* --- Contact & Footer --- */
-        .contact-text {
-            text-align: center;
-            font-size: 1.2rem;
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            line-height: 1.1;
             margin-bottom: 20px;
         }
 
-        #contact {
-            text-align: center;
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 600px;
         }
 
-        .social-links {
-            margin-top: 30px;
+        /* --- ABOUT --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
         }
 
-        .social-links a {
-            font-size: 2rem;
-            margin: 0 15px;
-            color: var(--secondary-color);
+        .profile-img-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            box-shadow: var(--card-shadow);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .skill-badge {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
             transition: var(--transition);
         }
 
-        .social-links a:hover {
-            color: var(--primary-color);
+        .skill-badge:hover {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
         }
 
-        footer {
-            background: var(--secondary-color);
-            color: var(--text-light);
+        /* --- PROJECTS --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* --- CERTIFICATES --- */
+        .cert-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+
+        .cert-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .cert-card:hover {
+            background: rgba(236, 72, 153, 0.05);
+            border-color: var(--secondary);
+        }
+
+        /* --- CONTACT --- */
+        .contact-content {
             text-align: center;
-            padding: 20px 0;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* --- MOBILE RESPONSIVENESS (FIXED) --- */
-        @media (max-width: 768px) {
-            /* Stack the about section vertically */
-            .about-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            /* Center and resize the profile image */
-            .about-image img {
-                width: 70%;
-                margin-top: 20px;
-            }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
 
-            /* Adjust Hero Font Size */
-            .hero h2 {
-                font-size: 2rem;
-            }
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
 
-            /* Stack Navigation Links Vertically or Centered */
-            .navbar .container {
-                flex-direction: column;
-            }
+        .social-icon:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+        }
 
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px 10%;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* --- SCROLL ANIMATION --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media screen and (max-width: 968px) {
+            .about-grid { grid-template-columns: 1fr; }
+            section { padding: 80px 5%; }
             .nav-links {
-                display: flex;       /* Keep links visible! */
-                flex-wrap: wrap;
+                position: absolute;
+                right: 0px;
+                height: 100vh;
+                top: 0;
+                background: var(--dark);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 justify-content: center;
-                margin-top: 15px;
-                gap: 15px;
-                padding-bottom: 10px;
+                width: 70%;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+                border-left: 1px solid var(--glass-border);
             }
-            
-            .nav-links li {
-                margin: 0;
-            }
+            .nav-links li { margin: 20px 0; }
+            .burger { display: block; }
+            .nav-active { transform: translateX(0%); }
+            .hero-content h1 { font-size: 3rem; }
         }
+
+        .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+        .toggle .line2 { opacity: 0; }
+        .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+
     </style>
-    </head>
+</head>
 <body>
 
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">MyPortfolio.</h1>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#exam">Exam</a></li> <li><a href="#contact">Contact</a></li>
-            </ul>
+    <nav id="navbar">
+        <a href="#home" class="logo">My<span>Portfolio</span></a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Hello, I'm <span class="highlight">Sanidu Harsha</span></h2>
-                <p>A Creative Web Developer & Designer</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn primary">View My Work</a>
-                    <a href="#contact" class="btn secondary">Contact Me</a>
-                </div>
+    <section id="home">
+        <div class="hero-content reveal">
+            <h3>HELLO, WORLD!</h3>
+            <h1>I'm Sanidu Harsha</h1>
+            <p>Software Engineering Student & Frontend Developer specializing in building modern, scalable, and user-friendly digital experiences.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="about">
+        <h2 class="section-title reveal">About Me</h2>
         <div class="container">
-            <h2 class="section-title">About Me</h2>
             <div class="about-grid">
-                <div class="about-text">
-                    <p>I am Sanidu Harsha, an undergraduate software engineering student following a degree from the University of Westminster at the Informatics Institute of Technology, Sri Lanka. I am currently learning the fundamentals of web development, with a focus on HTML and CSS, and I am passionate about building practical projects that strengthen my technical skills. I have a strong interest in technology, innovation, and entrepreneurship, and I aim to continuously improve my knowledge while preparing for a career in the software industry.</p>
-                    <ul class="skills-list">
-                        <li>HTML5 & CSS3</li>
-                        <li>JavaScript</li>
-                        <li>UI/UX Design</li>
-                        <li>Python</li>
-                    </ul>
+                <div class="profile-img-container reveal">
+                    <div class="profile-img">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="my.jpg" alt="Profile Picture">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Project Title 1</h3>
-                    <p>A brief description of what this project does and the tech stack used.</p>
-                    <a href="#" class="btn-small">View Code <i class="fab fa-github"></i></a>
-                </div>
-                <div class="project-card">
-                    <h3>Project Title 2</h3>
-                    <p>A brief description of what this project does and the tech stack used.</p>
-                    <a href="#" class="btn-small">View Code <i class="fab fa-github"></i></a>
-                </div>
-                <div class="project-card">
-                    <h3>Project Title 3</h3>
-                    <p>A brief description of what this project does and the tech stack used.</p>
-                    <a href="#" class="btn-small">View Code <i class="fab fa-github"></i></a>
+                <div class="about-text reveal">
+                    <p>I am a passionate Software Engineering student with a deep interest in frontend development and mobile applications. I love solving complex problems and turning creative ideas into functional code.</p>
+                    <br>
+                    <p>My goal is to develop localized solutions that make a real difference in people's lives through clean UI and optimized UX.</p>
+                    
+                    <h3 style="margin-top: 30px; margin-bottom: 15px;">Technical Skills</h3>
+                    <div class="skills-container">
+                        <span class="skill-badge">HTML5 / CSS3</span>
+                        <span class="skill-badge">JavaScript (ES6+)</span>
+                        <span class="skill-badge">Flutter / Dart</span>
+                        <span class="skill-badge">UI/UX Design</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">Node.js</span>
+                        <span class="skill-badge">Git / GitHub</span>
+                        <span class="skill-badge">Figma</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="exam" class="section">
-        <div class="container">
-            <h2 class="section-title">Examination</h2>
-            <div class="exam-content">
-                <p>Ready to test your knowledge? Click the button below to proceed to the question page.</p>
-                <a href="question.html" class="btn primary">Start Exam</a>
+    <section id="projects">
+        <h2 class="section-title reveal">My Projects</h2>
+        <div class="grid">
+            <div class="card reveal">
+                <div class="tech-stack">HTML • CSS • JS</div>
+                <h3>Personal Portfolio Website</h3>
+                <p>A modern, high-performance portfolio website built with glassmorphism UI and smooth scrolling. Fully responsive and optimized.</p>
+                <div class="card-links">
+                    <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem;">Live Demo</a>
+                    <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.8rem; margin-left: 5px;"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <div class="tech-stack">Flutter • Dart • Firebase</div>
+                <h3>SDGP Project: NutriPlan</h3>
+                <p>A localized diet-planning and health management app for Sri Lanka. Features meal logging, localized food database, and progress tracking.</p>
+                <div class="card-links">
+                    <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem;">Case Study</a>
+                    <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.8rem; margin-left: 5px;"><i class="fab fa-github"></i> GitHub</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-text">I'm currently open to new opportunities. Send me an email!</p>
-            <a href="mailto:saniduharsha2002@gmail.com" class="btn primary">Email Me</a>
+    <section id="certificates">
+        <h2 class="section-title reveal">Exams & Certifications</h2>
+        <div class="grid">
+            <div class="cert-card reveal">
+                <i class="fab fa-linkedin"></i>
+                <div>
+                    <h4>LinkedIn Skill Assessments</h4>
+                    <p>Verified: CSS, JS, Front-End Development</p>
+                </div>
+            </div>
+            <div class="cert-card reveal">
+                <i class="fas fa-code"></i>
+                <div>
+                    <h4>HackerRank Certified</h4>
+                    <p>Problem Solving (Basic), JavaScript Intermediate</p>
+                </div>
+            </div>
+            <div class="cert-card reveal">
+                <i class="fas fa-certificate"></i>
+                <div>
+                    <h4>SoloLearn Certifications</h4>
+                    <p>Responsive Web Design, Java, SQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title reveal">Get In Touch</h2>
+        <div class="contact-content reveal">
+            <p>Interested in collaborating or just want to say hi? Feel free to reach out through any of the channels below!</p>
             
+            <div style="margin-top: 30px;">
+                <p><i class="fas fa-envelope" style="color: var(--primary);"></i> sanidu.harsha@example.com</p>
+                <p><i class="fas fa-phone" style="color: var(--primary);"></i> +94 77 123 4567</p>
+            </div>
+
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/saniduharsha/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/sanidu2002"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Sanidu Harsha. All Rights Reserved.</p>
+        <p>&copy; 2025 Sanidu Harsha. Built with <i class="fas fa-heart" style="color: var(--secondary);"></i> using HTML, CSS & JS.</p>
     </footer>
 
+    <script>
+        /* --- MOBILE MENU --- */
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click', () => {
+            // Toggle Nav
+            nav.classList.toggle('nav-active');
+            // Burger Animation
+            burger.classList.toggle('toggle');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('nav-active');
+                burger.classList.remove('toggle');
+            });
+        });
+
+        /* --- NAVBAR SCROLL EFFECT --- */
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        /* --- ACTIVE LINK ON SCROLL --- */
+        const sections = document.querySelectorAll('section');
+        const navA = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navA.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
+                }
+            });
+        });
+
+        /* --- SCROLL REVEAL ANIMATION --- */
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
 </body>
 </html>

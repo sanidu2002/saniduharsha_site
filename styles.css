@@ -390,6 +390,7 @@ footer {
 /* --- RESPONSIVE --- */
 @media screen and (max-width: 968px) {
     .about-grid { grid-template-columns: 1fr; }
+    .profile-img-container { width: 250px; height: 250px; }
     section { padding: 80px 5%; }
     .nav-links {
         position: absolute;

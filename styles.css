@@ -86,22 +86,7 @@ h2.section-title {
     transform: translateY(-3px);
 }
 
-/* --- 3D CANVAS --- */
-#canvas3d {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.content-wrapper {
-    position: relative;
-    z-index: 2;
-}
-
-/* --- NAVBAR --- */
+/* --- NAVBAR ---*/
 nav {
     position: fixed;
     top: 0;

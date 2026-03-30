@@ -292,6 +292,23 @@ nav.scrolled {
     text-transform: uppercase;
 }
 
+.card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.card-links .btn {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+}
+
+.card-links .btn-outline {
+    margin-left: 0;
+}
+
 /* --- CERTIFICATES --- */
 .cert-card {
     display: flex;

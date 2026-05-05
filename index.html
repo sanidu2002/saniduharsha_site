@@ -12,10 +12,11 @@
     <div class="content-wrapper">
 
     <nav id="navbar">
-        <a href="#home" class="logo">My<span>Portfolio</span></a>
+        <a href="#home" class="logo">Sanidu<span>Harsha</span></a>
         <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#resume">Resume</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#certificates">Certificates</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -29,10 +30,10 @@
 
     <section id="home">
         <div class="hero-content reveal">
-            <h3>HELLO, WORLD!</h3>
-            <h1>I'm Sanidu Harsha</h1>
-            <p>Software Engineering Student & Full-Stack Developer passionate about building modern, scalable, and user-friendly web and mobile applications. I enjoy developing complete solutions from intuitive frontend interfaces to efficient backend systems.</p>
-            <div class="hero-btns">
+            <h3 class="reveal-up" style="--d: 0s">HELLO, WORLD!</h3>
+            <h1 class="reveal-up" style="--d: 0.1s">I'm Sanidu Harsha</h1>
+            <p class="reveal-up" style="--d: 0.2s">Software Engineering Student & Full-Stack Developer passionate about building modern, scalable, and user-friendly web and mobile applications. I enjoy developing complete solutions from intuitive frontend interfaces to efficient backend systems.</p>
+            <div class="hero-btns reveal-up" style="--d: 0.3s">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-outline">Contact Me</a>
             </div>
@@ -72,46 +73,97 @@
         </div>
     </section>
 
+    <section id="resume">
+        <div class="resume-container reveal">
+            <div class="resume-card">
+                <div class="resume-header">
+                    <div class="resume-icon-wrapper">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h2>My Resume</h2>
+                    <p class="resume-subtitle">Download my CV and learn more about my skills, experience, and projects</p>
+                </div>
+                
+                <div class="resume-description">
+                    <p>I'm a Software Engineering student passionate about full-stack development and building innovative solutions. This resume showcases my technical expertise, project experience, certifications, and professional achievements in web and mobile development.</p>
+                    <div class="resume-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-code"></i>
+                            <span>Full-Stack Development</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile Apps</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Continuous Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-actions">
+                    <a href="saniduharsha.pdf" download="saniduharsha.pdf" class="btn btn-download">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="projects">
         <h2 class="section-title reveal">My Projects</h2>
         <div class="grid">
-            <div class="card reveal">
-                <div class="tech-stack">HTML • CSS • JavaScript</div>
-                <h3>Personal Portfolio Website</h3>
-                <p>Designed and developed a responsive portfolio to showcase projects, skills, and certifications. Implemented modern UI layout and interactive navigation using HTML, CSS, and JavaScript.</p>
-                <div class="card-links">
-                    <a href="https://sanidu.site" class="btn btn-primary">Live Demo</a>
-                    <a href="https://github.com/sanidu2002/saniduharsha_site.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+            <div class="card reveal project-card">
+                <img src="Personal Portfolio Website.JPG" alt="Personal Portfolio Website" class="project-image">
+                <div class="card-content">
+                    <div class="tech-stack">HTML • CSS • JavaScript</div>
+                    <h3>Personal Portfolio Website</h3>
+                    <p>Designed and developed a responsive portfolio to showcase projects, skills, and certifications. Implemented modern UI layout and interactive navigation using HTML, CSS, and JavaScript.</p>
+                    <div class="card-links">
+                        <a href="https://sanidu.site" class="btn btn-primary">Live Demo</a>
+                        <a href="https://github.com/sanidu2002/saniduharsha_site.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card reveal">
-                <div class="tech-stack">Kotlin • Jetpack Compose • Django • PostgreSQL</div>
-                <h3>SDGP Project: Grist</h3>
-                <p>Grist is an AI-driven Android diet planning app for personalized nutrition tracking. Built modern UI with Jetpack Compose, consuming Django REST APIs backed by PostgreSQL; contributed navigation flows, UI components, and API integration.</p>
-                <div class="card-links">
-                    <a href="https://grist.life" class="btn btn-primary">Project Website</a>
-                    <a href="https://www.sdgp.lk/project/8b7c8a60-8c4a-4adc-a237-de3b05044089" class="btn btn-primary">SDGP.lk</a>
-                    <a href="https://github.com/MaheenAbeysooriya/Grist.life-frontend.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+            <div class="card reveal project-card">
+                <img src="SDGP Project.png" alt="SDGP Project" class="project-image">
+                <div class="card-content">
+                    <div class="tech-stack">Kotlin • Jetpack Compose • Django • PostgreSQL</div>
+                    <h3>SDGP Project: Grist</h3>
+                    <p>Grist is an AI-driven Android diet planning app for personalized nutrition tracking. Built modern UI with Jetpack Compose, consuming Django REST APIs backed by PostgreSQL; contributed navigation flows, UI components, and API integration.</p>
+                    <div class="card-links">
+                        <a href="https://grist.life" class="btn btn-primary">Project Website</a>
+                        <a href="https://www.sdgp.lk/project/8b7c8a60-8c4a-4adc-a237-de3b05044089" class="btn btn-primary">SDGP.lk</a>
+                        <a href="https://github.com/MaheenAbeysooriya/Grist.life-frontend.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card reveal">
-                <div class="tech-stack">HTML • CSS • JS • Python • Flask • SQLite</div>
-                <h3>Recipe Finder Web Application</h3>
-                <p>Full-stack recipe search app with Flask backend and JavaScript frontend: integrated TheMealDB API for ingredient-based lookup, added favorites backed by SQLite for persistence, and exposed RESTful endpoints to manage searches and saved recipes.</p>
-                <div class="card-links">
-                    <a href="https://github.com/sanidu2002/recipe-finder.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+            <div class="card reveal project-card">
+                <img src="Recipe Finder Web Application.JPG" alt="Recipe Finder" class="project-image">
+                <div class="card-content">
+                    <div class="tech-stack">HTML • CSS • JS • Python • Flask • SQLite</div>
+                    <h3>Recipe Finder Web Application</h3>
+                    <p>Full-stack recipe search app with Flask backend and JavaScript frontend: integrated TheMealDB API for ingredient-based lookup, added favorites backed by SQLite for persistence, and exposed RESTful endpoints to manage searches and saved recipes.</p>
+                    <div class="card-links">
+                        <a href="https://github.com/sanidu2002/recipe-finder.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card reveal">
-                <div class="tech-stack">HTML • CSS</div>
-                <h3>Climate Action Awareness Website</h3>
-                <p>Responsive group project that promotes climate action through educational sections, calls-to-action, and approachable visuals. I contributed frontend layouts and page development using semantic HTML and modern CSS.</p>
-                <div class="card-links">
-                    <a href="https://sanidu2002.github.io/sanidu2002-Climate-Action-Website-Web-Development-group-Project/" class="btn btn-primary">Project Website</a>
-                    <a href="https://github.com/sanidu2002/sanidu2002-Climate-Action-Website-Web-Development-group-Project.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+            <div class="card reveal project-card">
+                <img src="Climate Action Awareness Website.JPG" alt="Climate Action" class="project-image">
+                <div class="card-content">
+                    <div class="tech-stack">HTML • CSS</div>
+                    <h3>Climate Action Awareness Website</h3>
+                    <p>Responsive group project that promotes climate action through educational sections, calls-to-action, and approachable visuals. I contributed frontend layouts and page development using semantic HTML and modern CSS.</p>
+                    <div class="card-links">
+                        <a href="https://sanidu2002.github.io/sanidu2002-Climate-Action-Website-Web-Development-group-Project/" class="btn btn-primary">Project Website</a>
+                        <a href="https://github.com/sanidu2002/sanidu2002-Climate-Action-Website-Web-Development-group-Project.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,56 +172,72 @@
     <section id="certificates">
         <h2 class="section-title reveal">Certifications</h2>
         <div class="grid">
-            <div class="cert-card reveal">
-                <i class="fab fa-linkedin"></i>
-                <div>
-                    <h4>LinkedIn Learning Certificates</h4>
-                    <p>I have completed multiple certifications on LinkedIn Learning to improve my technical and professional skills. These courses enhanced my understanding of web development technologies and programming concepts, helping me build practical projects and strengthen my problem-solving abilities.</p>
-                    <div class="card-links" style="margin-top: 10px; display: flex; flex-direction: column; gap: 10px;">
-                        <a href="https://www.linkedin.com/learning/certificates/a71e9a503ebd7580b71cf35a7990cdfe98f29efd4c43a18da8bae2e66417756f?u=76664938" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.8rem;"><i class="fab fa-github"></i> Python Programming Foundations: Fundamentals</a>
-                        <a href="https://www.linkedin.com/learning/certificates/76103971a387e50b7627cdc9ba9631add38182d8e82ada85072f36975ddbaba7?u=76664938" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.8rem;"><i class="fab fa-github"></i> Python Quick Start</a>
+            <div class="card reveal cert-card">
+                <img src="LinkedIn Learning Certificates.JPG" alt="LinkedIn Learning Certificates" class="cert-image-display">
+                <div class="card-content">
+                    <div class="cert-badge"><i class="fab fa-linkedin"></i> LinkedIn Learning</div>
+                    <h3>LinkedIn Learning Certificates</h3>
+                    <p>I have completed multiple certifications on LinkedIn Learning to improve my technical and professional skills. These courses enhanced my understanding of web development technologies and programming concepts.</p>
+                    <div class="cert-info">
+                        <p><strong>Courses:</strong></p>
+                        <ul>
+                            <li>Python Programming Foundations: Fundamentals</li>
+                            <li>Python Quick Start</li>
+                        </ul>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://www.linkedin.com/in/saniduharsha/" class="btn btn-primary">View Certificates</a>
                     </div>
                 </div>
             </div>
 
-            <div class="cert-card reveal">
-                <i class="fas fa-graduation-cap"></i>
-                <div>
-                    <h4>Level 3 Diploma in Information Technology</h4>
-                    <p>ESOFT Metro Campus | Awarded by Pearson. Completed a diploma covering programming, databases, networking, and computer systems, building a solid foundation for further studies in Software Engineering.</p>
-                    <p><strong>Institution:</strong> ESOFT Metro Campus<br>
-                    <strong>Awarding Body:</strong> Pearson<br>
-                    <strong>Level:</strong> Level 3 Diploma<br>
-                    <strong>Field:</strong> Information Technology</p>
-                    <div class="card-links" style="margin-top: 10px;">
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7313828582210838528/?originTrackingId=IwG5KBG2VwOEp%2BLnpe%2FVAw%3D%3D" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.8rem;"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+            <div class="card reveal cert-card">
+                <img src="Level 3 Diploma in Information Technology.jpeg" alt="Level 3 Diploma in Information Technology" class="cert-image-display">
+                <div class="card-content">
+                    <div class="cert-badge"><i class="fas fa-graduation-cap"></i> Pearson</div>
+                    <h3>Level 3 Diploma in Information Technology</h3>
+                    <p>Completed a comprehensive diploma covering programming, databases, networking, and computer systems, building a solid foundation for Software Engineering.</p>
+                    <div class="cert-info">
+                        <p><strong>Institution:</strong> ESOFT Metro Campus<br>
+                        <strong>Awarding Body:</strong> Pearson<br>
+                        <strong>Level:</strong> Level 3 Diploma</p>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7313828582210838528/?originTrackingId=IwG5KBG2VwOEp%2BLnpe%2FVAw%3D%3D" class="btn btn-primary">View Certificate</a>
                     </div>
                 </div>
             </div>
 
-            <div class="cert-card reveal">
-                <i class="fas fa-certificate"></i>
-                <div>
-                    <h4>Programming in Python - 1. Python for Beginners</h4>
-                    <p>University of Moratuwa course in Python programming fundamentals. Completed a foundational Python course as part of the Trainee - Full stack developer program, strengthening core programming concepts and Python best practices.</p>
-                    <p><strong>Institution:</strong> University of Moratuwa<br>
-                    <strong>Program:</strong> Trainee - Full stack developer<br>
-                    <strong>Course:</strong> Programming in Python - 1. Python for Beginners</p>
-                    <div class="card-links" style="margin-top: 10px;">
-                        <!-- Add link to certificate if available -->
+            <div class="card reveal cert-card">
+                <img src="Python for Beginners.JPG" alt="Python for Beginners Certificate" class="cert-image-display">
+                <div class="card-content">
+                    <div class="cert-badge"><i class="fas fa-code"></i> University of Moratuwa</div>
+                    <h3>Python for Beginners</h3>
+                    <p>Foundational Python course covering programming fundamentals, data structures, and best practices as part of the Trainee - Full Stack Developer program.</p>
+                    <div class="cert-info">
+                        <p><strong>Institution:</strong> University of Moratuwa<br>
+                        <strong>Program:</strong> Trainee - Full Stack Developer<br>
+                        <strong>Focus:</strong> Python Fundamentals</p>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://open.uom.lk/lms/mod/customcert/verify_certificate.php" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
 
-            <div class="cert-card reveal">
-                <i class="fas fa-brain"></i>
-                <div>
-                    <h4>Machine Learning for Beginners</h4>
-                    <p>Sololearn course covering fundamental machine learning concepts and algorithms. Gained practical knowledge in machine learning principles and their applications.</p>
-                    <p><strong>Institution:</strong> Sololearn<br>
-                    <strong>Course:</strong> Machine Learning for Beginners</p>
-                    <div class="card-links" style="margin-top: 10px;">
-                        <a href="https://www.sololearn.com/en/certificates/CC-TKPARHVX" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.8rem;"><i class="fas fa-external-link-alt"></i> View Certificate</a>
+            <div class="card reveal cert-card">
+                <img src="Machine learning for beginers.jpg" alt="Machine Learning for Beginners Certificate" class="cert-image-display">
+                <div class="card-content">
+                    <div class="cert-badge"><i class="fas fa-brain"></i> Sololearn</div>
+                    <h3>Machine Learning for Beginners</h3>
+                    <p>Comprehensive course covering fundamental machine learning concepts, algorithms, and practical applications for real-world problem solving.</p>
+                    <div class="cert-info">
+                        <p><strong>Institution:</strong> Sololearn<br>
+                        <strong>Course:</strong> Machine Learning for Beginners<br>
+                        <strong>Skills:</strong> ML Fundamentals, Algorithms</p>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://www.sololearn.com/en/certificates/CC-TKPARHVX" class="btn btn-primary">View Certificate</a>
                     </div>
                 </div>
             </div>
@@ -177,22 +245,81 @@
     </section>
 
     <section id="contact">
-        <h2 class="section-title reveal">Get In Touch</h2>
-        <div class="contact-content reveal">
-            <p>I am always open to connecting with developers, recruiters, and professionals in the tech industry. If you are interested in collaborating, discussing a project, or offering an internship opportunity, feel free to reach out through any of the channels below.</p>
-            
-            <div style="margin-top: 30px;">
-                <p><i class="fas fa-envelope" style="color: var(--primary);"></i> saniduharsha2002@gmail.com</p>
-                <p><i class="fas fa-envelope" style="color: var(--primary);"></i> sanidu.20241750@iit.ac.lk</p>
-                <p><i class="fas fa-phone" style="color: var(--primary);"></i> 0787926703</p>
+        <h2 class="section-title reveal">Let's Work Together</h2>
+        <div class="contact-container reveal">
+            <div class="contact-intro">
+                <p>I'm always excited to hear about new projects and opportunities. Whether you have a question, want to discuss a collaboration, or just want to say hello, feel free to reach out!</p>
             </div>
 
-            <div class="social-links">
-                <a href="https://wa.me/94787926703" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.facebook.com/share/14ZBczEakqB/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/___saniduuu___zz?igsh=b3p2OWJ6em4zNWRw" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/sanidu2002" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/saniduharsha/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <div class="contact-wrapper">
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input 
+                                type="text" 
+                                id="name" 
+                                placeholder="Your Name" 
+                                required
+                                class="form-input"
+                            >
+                            <label for="name" class="form-label">Name</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                placeholder="Your Email" 
+                                required
+                                class="form-input"
+                            >
+                            <label for="email" class="form-label">Email</label>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea 
+                                id="message" 
+                                placeholder="Your Message" 
+                                rows="6"
+                                required
+                                class="form-input form-textarea"
+                            ></textarea>
+                            <label for="message" class="form-label">Message</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-send">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info-sidebar">
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p><a href="mailto:saniduharsha2002@gmail.com">saniduharsha2002@gmail.com</a></p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+94787926703">+94 787 926 703</a></p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>Sri Lanka</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links" style="margin-top: 50px;">
+                <a href="https://wa.me/94787926703" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/share/14ZBczEakqB/" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/___saniduuu___zz?igsh=b3p2OWJ6em4zNWRw" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/sanidu2002" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/saniduharsha/" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </section>

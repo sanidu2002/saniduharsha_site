@@ -275,6 +275,18 @@
             flex-wrap: wrap;
         }
 
+        .ads-container {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            display: flex;
+            justify-content: center;
+        }
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 2rem;
@@ -334,6 +346,19 @@
         <button onclick="togglePause()" class="pause-btn" id="pauseBtn">⏸ Pause (Space)</button>
         <button onclick="restartGame()" class="restart-btn">🔄 Restart Game</button>
         <a href="index.html" class="home-btn">🏠 Go to Home</a>
+    </div>
+
+    <!-- AdSense Ad -->
+    <div class="ads-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3110572129437396"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 </div>
 

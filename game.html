@@ -15,15 +15,42 @@
             margin-top: 20px;
             border: 2px solid white;
         }
+
+        .controls {
+            margin-top: 20px;
+        }
+
+        .controls button {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: none;
+            background: limegreen;
+            color: white;
+        }
     </style>
 </head>
 
 <body>
 
 <h1>🐍 Snake Game</h1>
-<p>Use Arrow Keys to Move</p>
+<p>Use Arrow Keys or Buttons</p>
 
 <canvas id="game" width="400" height="400"></canvas>
+
+<!-- Mobile Controls -->
+<div class="controls">
+    <div>
+        <button onclick="setDirection('UP')">⬆️</button>
+    </div>
+    <div>
+        <button onclick="setDirection('LEFT')">⬅️</button>
+        <button onclick="setDirection('DOWN')">⬇️</button>
+        <button onclick="setDirection('RIGHT')">➡️</button>
+    </div>
+</div>
 
 <script>
 const canvas = document.getElementById("game");
@@ -51,6 +78,14 @@ function changeDirection(event) {
     else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
 }
 
+// mobile button control
+function setDirection(dir) {
+    if (dir === "LEFT" && direction !== "RIGHT") direction = "LEFT";
+    else if (dir === "UP" && direction !== "DOWN") direction = "UP";
+    else if (dir === "RIGHT" && direction !== "LEFT") direction = "RIGHT";
+    else if (dir === "DOWN" && direction !== "UP") direction = "DOWN";
+}
+
 // game loop
 function draw() {
     ctx.fillStyle = "black";
@@ -66,7 +101,6 @@ function draw() {
     ctx.fillStyle = "red";
     ctx.fillRect(food.x, food.y, box, box);
 
-    // move snake
     let headX = snake[0].x;
     let headY = snake[0].y;
 
@@ -88,7 +122,7 @@ function draw() {
 
     let newHead = { x: headX, y: headY };
 
-    // game over (wall collision)
+    // game over (wall)
     if (headX < 0 || headY < 0 || headX >= 400 || headY >= 400) {
         clearInterval(game);
         alert("Game Over! Score: " + score);
@@ -104,12 +138,10 @@ function draw() {
 
     snake.unshift(newHead);
 
-    // score display
     ctx.fillStyle = "white";
     ctx.fillText("Score: " + score, 10, 20);
 }
 
-// speed
 let game = setInterval(draw, 100);
 </script>
 

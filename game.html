@@ -37,6 +37,7 @@
             font-size: 2.5rem;
             margin-bottom: 10px;
             background: linear-gradient(to right, #6366f1, #ec4899);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -362,32 +363,64 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const scoreText = document.getElementById("scoreText");
 
-// Responsive canvas sizing
-function resizeCanvas() {
+let box = 0;
+let snake = [];
+let direction = "RIGHT";
+let nextDirection = "RIGHT";
+let food = {};
+let score = 0;
+let gameRunning = true;
+let isPaused = false;
+let game = null;
+
+// Initialize game
+function initGame() {
+    // Responsive canvas sizing
     const container = canvas.parentElement;
     const size = Math.min(container.clientWidth - 40, 500);
     canvas.width = size;
     canvas.height = size;
+    
+    // Calculate box size based on canvas
+    box = Math.floor(canvas.width / 20);
+    
+    // Reset game state
+    snake = [{ x: Math.floor(canvas.width / 2), y: Math.floor(canvas.height / 2) }];
+    direction = "RIGHT";
+    nextDirection = "RIGHT";
+    score = 0;
+    scoreText.textContent = "0";
+    gameRunning = true;
+    isPaused = false;
+    
+    // Generate food
+    food = {
+        x: Math.floor(Math.random() * (canvas.width / box)) * box,
+        y: Math.floor(Math.random() * (canvas.height / box)) * box
+    };
+    
+    // Clear old game loop
+    if (game) clearInterval(game);
+    
+    // Start new game loop
+    game = setInterval(draw, 250);
 }
 
-resizeCanvas();
+// Handle window resize
+function resizeCanvas() {
+    if (gameRunning && !isPaused) {
+        const container = canvas.parentElement;
+        const size = Math.min(container.clientWidth - 40, 500);
+        if (canvas.width !== size) {
+            canvas.width = size;
+            canvas.height = size;
+            box = Math.floor(canvas.width / 20);
+        }
+    }
+}
+
+initGame();
 window.addEventListener("resize", resizeCanvas);
-
-const box = Math.floor(canvas.width / 20);
-
-let snake = [{ x: Math.floor(canvas.width / 2), y: Math.floor(canvas.height / 2) }];
-let direction = "RIGHT";
-let nextDirection = "RIGHT";
-
-let food = {
-    x: Math.floor(Math.random() * (canvas.width / box)) * box,
-    y: Math.floor(Math.random() * (canvas.height / box)) * box
-};
-
-let score = 0;
-let gameRunning = true;
-let isPaused = false;
-let game;
 
 // Pause/Resume function
 function togglePause() {
@@ -410,29 +443,11 @@ function restartGame() {
     document.getElementById("gameOverModal").classList.remove("active");
     document.getElementById("pauseModal").classList.remove("active");
     
-    // Reset variables
-    snake = [{ x: Math.floor(canvas.width / 2), y: Math.floor(canvas.height / 2) }];
-    direction = "RIGHT";
-    nextDirection = "RIGHT";
-    score = 0;
-    scoreText.textContent = "0";
-    gameRunning = true;
-    isPaused = false;
+    // Reinitialize the game
+    initGame();
     
     // Update pause button
     document.getElementById("pauseBtn").textContent = "⏸️ Pause (Space)";
-    
-    // Generate new food
-    food = {
-        x: Math.floor(Math.random() * (canvas.width / box)) * box,
-        y: Math.floor(Math.random() * (canvas.height / box)) * box
-    };
-    
-    // Clear old game loop
-    clearInterval(game);
-    
-    // Start new game loop
-    game = setInterval(draw, 100);
 }
 
 // Keyboard control
@@ -532,7 +547,7 @@ function showGameOver() {
     document.getElementById("gameOverModal").classList.add("active");
 }
 
-game = setInterval(draw, 100);
+game = setInterval(draw, 200);
 </script>
 
 </body>

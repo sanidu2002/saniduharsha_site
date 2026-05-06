@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake Game</title>
+    <style>
+        body {
+            text-align: center;
+            background: #111;
+            color: white;
+            font-family: Arial;
+        }
+
+        canvas {
+            background: black;
+            margin-top: 20px;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🐍 Snake Game</h1>
+<p>Use Arrow Keys to Move</p>
+
+<canvas id="game" width="400" height="400"></canvas>
+
+<script>
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+const box = 20;
+
+let snake = [{ x: 200, y: 200 }];
+let direction = "RIGHT";
+
+let food = {
+    x: Math.floor(Math.random() * 20) * box,
+    y: Math.floor(Math.random() * 20) * box
+};
+
+let score = 0;
+
+// keyboard control
+document.addEventListener("keydown", changeDirection);
+
+function changeDirection(event) {
+    if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
+    else if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
+    else if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
+    else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+}
+
+// game loop
+function draw() {
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, 400, 400);
+
+    // snake
+    for (let i = 0; i < snake.length; i++) {
+        ctx.fillStyle = i === 0 ? "lime" : "green";
+        ctx.fillRect(snake[i].x, snake[i].y, box, box);
+    }
+
+    // food
+    ctx.fillStyle = "red";
+    ctx.fillRect(food.x, food.y, box, box);
+
+    // move snake
+    let headX = snake[0].x;
+    let headY = snake[0].y;
+
+    if (direction === "LEFT") headX -= box;
+    if (direction === "UP") headY -= box;
+    if (direction === "RIGHT") headX += box;
+    if (direction === "DOWN") headY += box;
+
+    // eat food
+    if (headX === food.x && headY === food.y) {
+        score++;
+        food = {
+            x: Math.floor(Math.random() * 20) * box,
+            y: Math.floor(Math.random() * 20) * box
+        };
+    } else {
+        snake.pop();
+    }
+
+    let newHead = { x: headX, y: headY };
+
+    // game over (wall collision)
+    if (headX < 0 || headY < 0 || headX >= 400 || headY >= 400) {
+        clearInterval(game);
+        alert("Game Over! Score: " + score);
+    }
+
+    // self collision
+    for (let i = 1; i < snake.length; i++) {
+        if (headX === snake[i].x && headY === snake[i].y) {
+            clearInterval(game);
+            alert("Game Over! Score: " + score);
+        }
+    }
+
+    snake.unshift(newHead);
+
+    // score display
+    ctx.fillStyle = "white";
+    ctx.fillText("Score: " + score, 10, 20);
+}
+
+// speed
+let game = setInterval(draw, 100);
+</script>
+
+</body>
+</html>

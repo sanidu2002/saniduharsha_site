@@ -929,6 +929,35 @@ footer {
     border-top: 1px solid var(--glass-border);
     color: var(--gray);
     font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.play-btn {
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    font-size: 1rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.play-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(236, 72, 153, 0.6);
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+.play-btn:active {
+    transform: translateY(-2px) scale(1.02);
 }
 
 /* --- SCROLL ANIMATION --- */

@@ -1,349 +1,599 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sanidu Harsha is a Software Engineering student and full stack developer from Sri Lanka building modern web and mobile applications.">
-    <title>Sanidu Harsha | Full Stack Developer Portfolio Sri Lanka | software engineer</title>
-    
-     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD8YZ24NML"></script>
-    <script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sanidu Harsha is a Software Engineering student at the University of Westminster (IIT Sri Lanka), building full-stack web and mobile products.">
+  <meta name="keywords" content="Sanidu Harsha, software engineer, full stack developer, mobile developer, Sri Lanka, University of Westminster, IIT">
+  <meta name="author" content="Sanidu Harsha">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:title" content="Sanidu Harsha | Software Engineering Student">
+  <meta property="og:description" content="Full-stack and mobile developer building thoughtful, real-world digital products.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sanidu.site/">
+  <meta property="og:image" content="https://sanidu.site/assets/sanidu.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://sanidu.site/">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Sanidu Harsha | Full-Stack & Mobile Developer</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sanidu Harsha",
+      "url": "https://sanidu.site",
+      "image": "https://sanidu.site/assets/sanidu.jpg",
+      "jobTitle": "Software Engineering Student",
+      "email": "mailto:saniduharsha2002@gmail.com",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Westminster"
+      },
+      "sameAs": [
+        "https://github.com/sanidu2002",
+        "https://www.linkedin.com/in/saniduharsha/"
+      ]
+    }
+  </script>
+</head>
+<body>
+  <div class="loader" aria-hidden="true">
+    <div class="loader-mark"><span>S</span><span>H</span></div>
+    <div class="loader-line"><i></i></div>
+    <p>Initializing portfolio</p>
+  </div>
+
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="aurora" aria-hidden="true">
+    <span class="aurora-one"></span>
+    <span class="aurora-two"></span>
+    <span class="aurora-three"></span>
+  </div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="pointer-glow" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand magnetic" href="#home" aria-label="Sanidu Harsha home">
+        <span class="brand-mark">SH</span>
+        <span class="brand-copy">Sanidu Harsha<small>Software Engineering Student</small></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Work</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#journey">Education Journey</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-button theme-toggle magnetic" type="button" aria-label="Switch color theme">
+          <span class="theme-icon">◐ Mode</span>
+        </button>
+        <button class="menu-toggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow reveal">
+            <span class="status-dot"></span>
+            Available for internships & opportunities
+          </div>
+          <p class="hero-kicker reveal">Hello, world. I’m</p>
+          <h1 class="hero-title reveal">
+            <span>Sanidu</span>
+            <span class="gradient-text">Harsha.</span>
+          </h1>
+          <p class="hero-role reveal">I build <span id="typingText">full-stack experiences.</span><span class="typing-caret"></span></p>
+          <p class="hero-summary reveal">Software Engineering student at the University of Westminster through IIT Sri Lanka, focused on full-stack development, mobile experiences, and products that feel as good as they work.</p>
+
+          <div class="hero-actions reveal">
+            <a class="button button-primary magnetic" href="#projects">Explore my work <span>↗</span></a>
+            <a class="button button-secondary magnetic" href="assets/sanidu-harsha-cv.pdf" download>Download My Resume<span>↓</span></a>
+          </div>
+
+          <div class="hero-social reveal">
+            <span>Find me online</span>
+            <a href="https://github.com/sanidu2002" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/saniduharsha/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="profile-orbit">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="profile-frame">
+              <img src="assets/sanidu.jpg" alt="Sanidu Harsha" width="680" height="680" fetchpriority="high">
+              <div class="profile-shine"></div>
+            </div>
+            <div class="floating-chip chip-code"><span>&lt;/&gt;</span> Full-Stack Developer</div>
+            <div class="floating-chip chip-mobile"><span>◫</span> Software Engineer</div>
+            <div class="floating-chip chip-location"><span>⌖</span> IIT Sri Lanka</div>
+          </div>
+          <div class="availability-card glass-card">
+            <div>
+              <span class="status-dot"></span>
+              <small>Current focus</small>
+            </div>
+            <strong>Building useful digital products</strong>
+            <div class="mini-stack">
+              <span>JS</span><span>PY</span><span>KT</span><span>DB</span><span>Java</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-marquee" aria-label="Technology stack">
+        <div class="marquee-track">
+          <span>HTML5</span><i>✦</i><span>CSS3</span><i>✦</i><span>JavaScript</span><i>✦</i><span>Python</span><i>✦</i><span>Flask</span><i>✦</i><span>Kotlin</span><i>✦</i><span>Flutter/Dart</span><i>✦</i><span>MySQL</span><i>✦</i><span>Git</span><i>✦</i><span>Figma</span><i>✦</i>
+          <span aria-hidden="true">HTML5</span><i aria-hidden="true">✦</i><span aria-hidden="true">CSS3</span><i aria-hidden="true">✦</i><span aria-hidden="true">JavaScript</span><i aria-hidden="true">✦</i><span aria-hidden="true">Python</span><i aria-hidden="true">✦</i><span aria-hidden="true">Java</span><i aria-hidden="true">✦</i><span aria-hidden="true">Kotlin</span><i aria-hidden="true">✦</i><span aria-hidden="true">Jetpack Compose</span><i aria-hidden="true">✦</i><span aria-hidden="true">MySQL</span><i aria-hidden="true">✦</i><span aria-hidden="true">Git</span><i aria-hidden="true">✦</i><span aria-hidden="true">Figma</span><i aria-hidden="true">✦</i><span aria-hidden="true">Java</span><i aria-hidden="true">✦</i>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="section-heading reveal">
+        <div><span class="section-index">01</span><span class="section-label">About me</span></div>
+        <h2>Engineering with <span class="gradient-text">curiosity.</span></h2>
+        <p>I enjoy turning ideas into complete, user-friendly software, from the interface people touch to the systems working behind it.</p>
+      </div>
+
+      <div class="about-layout">
+        <article class="story-card glass-card spotlight reveal">
+          <span class="card-tag">My story</span>
+          <h3>From curiosity to complete products.</h3>
+          <p>I am a Software Engineering student with a strong passion for full-stack development and building complete software solutions. I enjoy designing intuitive interfaces while developing efficient backend systems that power real-world applications.</p>
+          <p>Through university projects and personal work, I have built full-stack web platforms and mobile apps with an emphasis on clean architecture, performance, and useful design. I keep learning because every new tool makes the next idea more possible.</p>
+          <div class="story-signature">
+            <span>Sri Lanka</span>
+            <span>Open to global opportunities</span>
+          </div>
+        </article>
+
+        <div class="about-side">
+          <article class="education-card soft-card reveal">
+            <div class="education-icon">U</div>
+            <div>
+              <span class="card-tag">Education</span>
+              <h3>University of Westminster</h3>
+              <p>Software Engineering at Informatics Institute of Technology (IIT), Sri Lanka.</p>
+              <span class="degree-focus">Full Stack & Mobile Development</span>
+              <span class="degree-focus">Machine Learning</span>
+            </div>
+          </article>
+          <article class="principles-card glass-card spotlight reveal">
+            <span class="card-tag">How I work</span>
+            <ul>
+              <li><span>01</span><div><strong>Think in systems</strong><small>Understand the full product, not just one screen.</small></div></li>
+              <li><span>02</span><div><strong>Design for people</strong><small>Clear interfaces beat clever complexity.</small></div></li>
+              <li><span>03</span><div><strong>Learn in public</strong><small>Build, test, improve, and share the result.</small></div></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="stats-grid reveal" aria-label="Portfolio statistics">
+        <div class="stat-card"><strong data-count="7">0</strong><span>Projects completed</span></div>
+        <div class="stat-card"><strong data-count="6">0</strong><span>Certificate groups</span></div>
+        <div class="stat-card"><strong data-count="10">0</strong><span>Core technologies</span></div>
+        <a class="stat-card stat-link" href="https://github.com/sanidu2002" target="_blank" rel="noreferrer"><strong>Live</strong><span>GitHub activity ↗</span></a>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills">
+      <div class="section-heading reveal">
+        <div><span class="section-index">02</span><span class="section-label">Capabilities</span></div>
+        <h2>Tools I use to <span class="gradient-text">make ideas real.</span></h2>
+        <p>A growing toolkit across product interfaces, application logic, mobile development, data, and collaborative delivery.</p>
+      </div>
+
+      <div class="skill-tabs reveal" role="tablist" aria-label="Skill categories">
+        <button class="skill-tab active" data-skill-tab="frontend" role="tab" aria-selected="true">Frontend</button>
+        <button class="skill-tab" data-skill-tab="backend" role="tab" aria-selected="false">Backend</button>
+        <button class="skill-tab" data-skill-tab="mobile" role="tab" aria-selected="false">Mobile</button>
+        <button class="skill-tab" data-skill-tab="databases" role="tab" aria-selected="false">Databases</button>
+        <button class="skill-tab" data-skill-tab="tools" role="tab" aria-selected="false">Tools & DevOps</button>
+      </div>
+
+      <div class="skills-stage glass-card reveal">
+        <div class="skill-panel active" data-skill-panel="frontend">
+          <div class="skill-intro"><span>01 / 05</span><h3>Frontend Development</h3><p>Responsive, accessible interfaces with clear interaction and visual polish.</p></div>
+          <div class="skill-list">
+            <div class="skill-item" style="--level:92%"><div><strong>HTML5</strong><span>Semantic structure</span></div><i></i></div>
+            <div class="skill-item" style="--level:88%"><div><strong>CSS3</strong><span>Responsive UI & motion</span></div><i></i></div>
+            <div class="skill-item" style="--level:82%"><div><strong>JavaScript</strong><span>Interactive experiences</span></div><i></i></div>
+            <div class="skill-item" style="--level:74%"><div><strong>UI / UX</strong><span>Product thinking</span></div><i></i></div>
+            <div class="skill-item" style="--level:90%"><div><strong>Figma</strong><span>Interface design</span></div><i></i></div>
+          </div>
+        </div>
+        <div class="skill-panel" data-skill-panel="backend">
+          <div class="skill-intro"><span>02 / 05</span><h3>Backend Development</h3><p>Practical server-side foundations for connected, data-driven products.</p></div>
+          <div class="skill-list">
+            <div class="skill-item" style="--level:82%"><div><strong>Python</strong><span>Application logic</span></div><i></i></div>
+            <div class="skill-item" style="--level:76%"><div><strong>Flask</strong><span>APIs & web backends</span></div><i></i></div>
+            <div class="skill-item" style="--level:68%"><div><strong>Java</strong><span>Object-oriented systems</span></div><i></i></div>
+            <div class="skill-item" style="--level:72%"><div><strong>REST APIs</strong><span>Service integration</span></div><i></i></div>
+          </div>
+        </div>
+        <div class="skill-panel" data-skill-panel="mobile">
+          <div class="skill-intro"><span>03 / 05</span><h3>Mobile Development</h3><p>Native Android experiences with modern, composable interfaces.</p></div>
+          <div class="skill-list">
+            <div class="skill-item" style="--level:84%"><div><strong>Kotlin</strong><span>Android development</span></div><i></i></div>
+            <div class="skill-item" style="--level:80%"><div><strong>Jetpack Compose</strong><span>Modern native UI</span></div><i></i></div>
+            <div class="skill-item" style="--level:66%"><div><strong>Flutter / Dart</strong><span>Cross-platform foundations</span></div><i></i></div>
+            <div class="skill-item" style="--level:73%"><div><strong>API Integration</strong><span>Connected mobile apps</span></div><i></i></div>
+          </div>
+        </div>
+        <div class="skill-panel" data-skill-panel="databases">
+          <div class="skill-intro"><span>04 / 05</span><h3>Databases</h3><p>Structured persistence for applications, prototypes, and production workflows.</p></div>
+          <div class="skill-list">
+            <div class="skill-item" style="--level:78%"><div><strong>MySQL</strong><span>Relational data</span></div><i></i></div>
+            <div class="skill-item" style="--level:75%"><div><strong>SQLite</strong><span>Lightweight persistence</span></div><i></i></div>
+            <div class="skill-item" style="--level:68%"><div><strong>PostgreSQL</strong><span>Application databases</span></div><i></i></div>
+            <div class="skill-item" style="--level:74%"><div><strong>Data Modeling</strong><span>Clear structures</span></div><i></i></div>
+          </div>
+        </div>
+        <div class="skill-panel" data-skill-panel="tools">
+          <div class="skill-intro"><span>05 / 05</span><h3>Tools & Workflow</h3><p>Tools for versioning, collaboration, interface design, and shipping work.</p></div>
+          <div class="skill-list">
+            <div class="skill-item" style="--level:86%"><div><strong>Git / GitHub</strong><span>Version control</span></div><i></i></div>
+            <div class="skill-item" style="--level:78%"><div><strong>Figma</strong><span>Interface design</span></div><i></i></div>
+            <div class="skill-item" style="--level:72%"><div><strong>Responsive Testing</strong><span>Cross-device quality</span></div><i></i></div>
+            <div class="skill-item" style="--level:70%"><div><strong>Deployment</strong><span>Web delivery</span></div><i></i></div>
+            <div class="skill-item" style="--level:85%"><div><strong>Microsoft Office</strong><span>Word, Excel, PowerPoint</span></div><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="section-heading section-heading-row reveal">
+        <div>
+          <div><span class="section-index">03</span><span class="section-label">Selected work</span></div>
+          <h2>Projects built to <span class="gradient-text">solve & explore.</span></h2>
+        </div>
+        <p>From a nutrition-focused Android app to practical full-stack tools and web experiences.</p>
+      </div>
+
+      <article class="featured-project glass-card spotlight reveal" data-project data-category="mobile backend">
+        <div class="featured-media">
+          <img src="assets/grist.png" alt="Grist AI-driven diet planning application" width="1200" height="760" loading="lazy">
+          <span class="featured-pill">Featured project</span>
+        </div>
+        <div class="featured-copy">
+          <div class="project-number">01</div>
+          <span class="project-type">Android · AI nutrition</span>
+          <h3>Grist</h3>
+          <p>An AI-driven Android diet-planning app for personalized nutrition tracking. I contributed navigation flows, modern Jetpack Compose UI components, and integration with Django REST APIs backed by PostgreSQL.</p>
+          <div class="tech-pills"><span>Kotlin</span><span>Jetpack Compose</span><span>Django</span><span>PostgreSQL</span></div>
+          <div class="project-actions">
+            <a class="text-link" href="https://grist.life" target="_blank" rel="noreferrer">Visit website ↗</a>
+            <a class="text-link" href="https://www.sdgp.lk/project/8b7c8a60-8c4a-4adc-a237-de3b05044089" target="_blank" rel="noreferrer">SDGP profile ↗</a>
+            <a class="text-link muted-link" href="https://github.com/MaheenAbeysooriya/Grist.life-frontend.git" target="_blank" rel="noreferrer">Source code ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="project-toolbar reveal">
+        <div class="filter-group" aria-label="Filter projects">
+          <button class="filter-button active" data-filter="all">All</button>
+          <button class="filter-button" data-filter="web">Web</button>
+          <button class="filter-button" data-filter="mobile">Mobile</button>
+          <button class="filter-button" data-filter="backend">Full Stack</button>
+          <button class="filter-button" data-filter="desktop">Desktop Apps</button>
+        </div>
+        <label class="project-search">
+          <span>⌕</span>
+          <input id="projectSearch" type="search" placeholder="Search projects..." autocomplete="off">
+        </label>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+        <article class="project-card glass-card spotlight reveal" data-project  data-category="desktop"  data-title="Whack Animal Java Game">
+        <div class="project-image"><img src="assets/java-game.jpg" alt="Java Game Preview" width="900" height="540" loading="lazy">
+          <a href="https://github.com/sanidu2002/Java_Game.git" target="_blank" rel="noreferrer" aria-label="Open Java Game Repository">↗</a>
+        </div>
+
+        <div class="project-card-copy">
+        <div><span class="project-number">05</span> <span class="project-type">Desktop Game · Java</span>
+        </div>
+
+        <h3>Whack Animal Game</h3>
+
+        <p>
+            An interactive desktop game developed using Java Swing.
+            Players score points by clicking randomly appearing animals
+            within a 60-second countdown. Features include score tracking,
+            timer management, restart functionality, and event-driven gameplay.
+        </p>
+
+        <div class="tech-pills">
+            <span>Java</span>
+            <span>Java Swing</span>
+            <span>GUI</span>
+            <span>OOP</span>
+        </div>
+
+        <div class="project-actions">
+            <a class="text-link"
+               href="https://github.com/sanidu2002/Java_Game.git"
+               target="_blank"
+               rel="noreferrer">
+                GitHub ↗
+            </a>
+          </div>
+      </div>
+          </article>
+
+        <article class="project-card glass-card spotlight reveal" data-project data-category="web backend" data-title="Recipe Finder Web Application">
+          <div class="project-image">
+            <img src="assets/recipe-finder.jpg" alt="Recipe Finder Web Application preview" width="900" height="540" loading="lazy">
+            <a href="https://github.com/sanidu2002/recipe-finder.git" target="_blank" rel="noreferrer" aria-label="Open Recipe Finder source code">↗</a>
+          </div>
+          <div class="project-card-copy">
+            <div><span class="project-number">03</span><span class="project-type">Full Stack · Utility</span></div>
+            <h3>Recipe Finder</h3>
+            <p>A full-stack search app using TheMealDB API, with ingredient lookup, SQLite-backed favorites, and RESTful endpoints.</p>
+            <div class="tech-pills"><span>JavaScript</span><span>Python</span><span>Flask</span><span>SQLite</span></div>
+            <div class="project-actions"><a class="text-link muted-link" href="https://github.com/sanidu2002/recipe-finder.git" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+          </div>
+        </article>
+
+        <article class="project-card glass-card spotlight reveal" data-project data-category="web" data-title="Climate Action Awareness Website">
+          <div class="project-image">
+            <img src="assets/climate-action.jpg" alt="Climate Action Awareness Website preview" width="900" height="540" loading="lazy">
+            <a href="https://sanidu2002.github.io/sanidu2002-Climate-Action-Website-Web-Development-group-Project/" target="_blank" rel="noreferrer" aria-label="Open Climate Action Website">↗</a>
+          </div>
+          <div class="project-card-copy">
+            <div><span class="project-number">04</span><span class="project-type">Group project · Web</span></div>
+            <h3>Climate Action Website</h3>
+            <p>An educational group project promoting climate action through responsive layouts, approachable visuals, and clear calls to action.</p>
+            <div class="tech-pills"><span>HTML</span><span>CSS</span><span>Responsive Design</span></div>
+            <div class="project-actions"><a class="text-link" href="https://kavindu-gh.github.io/climate-actions-web/" target="_blank" rel="noreferrer">Live demo ↗</a><a class="text-link muted-link" href="https://github.com/kAvindu-gh/climate-actions-web.git" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+          </div>
+        </article>
+      </div>
+      <p class="empty-projects" id="emptyProjects">No projects match that search yet.</p>
+    </section>
+
+    <section class="section certificates" id="certificates">
+      <div class="section-heading reveal">
+        <div><span class="section-index">04</span><span class="section-label">Credentials</span></div>
+        <h2>Always learning. <span class="gradient-text">Always shipping.</span></h2>
+        <p>Formal foundations and focused courses that support my growth across software engineering, Python, and machine learning.</p>
+      </div>
+
+      <div class="certificate-grid">
+        <article class="certificate-card glass-card spotlight reveal" data-cert-image="assets/linkedin-certificates.jpg" data-cert-title="LinkedIn Learning Certificates">
+          <button class="certificate-preview" type="button" aria-label="Preview LinkedIn Learning Certificates">
+            <img src="assets/linkedin-certificates.jpg" alt="LinkedIn Learning Certificates" width="800" height="520" loading="lazy">
+            <span>View certificate <i>↗</i></span>
+          </button>
+          <div class="certificate-copy"><span class="issuer">LinkedIn Learning</span><h3>Python Learning Certificates</h3><p>Python Programming Foundations: Fundamentals and Python Quick Start.</p><a href="https://www.linkedin.com/in/saniduharsha/" target="_blank" rel="noreferrer">View credentials ↗</a></div>
+        </article>
+
+        <article class="certificate-card glass-card spotlight reveal" data-cert-image="assets/pearson-diploma.jpeg" data-cert-title="Level 3 Diploma in Information Technology">
+          <button class="certificate-preview" type="button" aria-label="Preview Level 3 Diploma in Information Technology">
+            <img src="assets/pearson-diploma.jpeg" alt="Level 3 Diploma in Information Technology" width="800" height="520" loading="lazy">
+            <span>View certificate <i>↗</i></span>
+          </button>
+          <div class="certificate-copy"><span class="issuer">Pearson · ESOFT Metro Campus</span><h3>Level 3 Diploma in IT</h3><p>A foundation across programming, databases, networking, and computer systems.</p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7313828582210838528/?originTrackingId=IwG5KBG2VwOEp%2BLnpe%2FVAw%3D%3D" target="_blank" rel="noreferrer">Verify credential ↗</a></div>
+        </article>
+
+        <article class="certificate-card glass-card spotlight reveal" data-cert-image="assets/python-certificate.jpg" data-cert-title="Python for Beginners">
+          <button class="certificate-preview" type="button" aria-label="Preview Python for Beginners certificate">
+            <img src="assets/python-certificate.jpg" alt="Python for Beginners Certificate" width="800" height="520" loading="lazy">
+            <span>View certificate <i>↗</i></span>
+          </button>
+          <div class="certificate-copy"><span class="issuer">University of Moratuwa</span><h3>Python for Beginners</h3><p>Programming fundamentals, data structures, and practical Python foundations.</p><a href="https://open.uom.lk/lms/mod/customcert/verify_certificate.php" target="_blank" rel="noreferrer">Verify credential ↗</a></div>
+        </article>
+
+        <article class="certificate-card glass-card spotlight reveal" data-cert-image="assets/ml-certificate.jpg" data-cert-title="Machine Learning for Beginners">
+          <button class="certificate-preview" type="button" aria-label="Preview Machine Learning for Beginners certificate">
+            <img src="assets/ml-certificate.jpg" alt="Machine Learning for Beginners Certificate" width="800" height="520" loading="lazy">
+            <span>View certificate <i>↗</i></span>
+          </button>
+          <div class="certificate-copy"><span class="issuer">Sololearn</span><h3>Machine Learning for Beginners</h3><p>Fundamental machine learning concepts, algorithms, and practical applications.</p><a href="https://www.sololearn.com/en/certificates/CC-TKPARHVX" target="_blank" rel="noreferrer">Verify credential ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section github-section" id="github">
+      <div class="github-shell glass-card spotlight reveal">
+        <div class="github-profile">
+          <div class="github-avatar"><img src="assets/sanidu.jpg" alt="" width="120" height="120" loading="lazy"><span></span></div>
+          <span class="card-tag">Open source profile</span>
+          <h2>@sanidu2002</h2>
+          <p>Projects, experiments, coursework, and the ongoing record of learning by building.</p>
+          <a class="button button-primary" href="https://github.com/sanidu2002" target="_blank" rel="noreferrer">View GitHub profile ↗</a>
+        </div>
+        <div class="github-activity">
+          <div class="activity-head"><div><small>Contribution-style activity</small><strong>Build. Commit. Improve.</strong></div><span>Live details on GitHub ↗</span></div>
+          <div class="contribution-grid" id="contributionGrid" aria-label="Decorative contribution activity visualization"></div>
+          <div class="github-meta">
+            <div><small>Primary interests</small><strong>Web · Mobile · APIs</strong></div>
+            <div><small>Featured repositories</small><strong>Grist · Recipe Finder</strong></div>
+            <div><small>Profile status</small><strong class="online">Public & active</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journey" id="journey">
+      <div class="section-heading reveal">
+        <div><span class="section-index">05</span><span class="section-label">Education Journey</span></div>
+        <h2>My Academic <span class="gradient-text">Journey.</span></h2>
+        <p>A continuous path of learning, growth, and technical development
+        in software engineering and information technology.</p>
+      </div>
+
+      <div class="timeline">
+
+    <article class="timeline-item reveal">
+        <div class="timeline-marker"><span></span></div>
+        <div class="timeline-period">2024 - Present</div>
+        <div class="timeline-card glass-card spotlight">
+            <span>Higher Education</span>
+            <h3>BEng (Hons) Software Engineering</h3>
+            <h4>Informatics Institute of Technology (IIT) · University of Westminster</h4>
+            <p>
+                Currently pursuing a Bachelor's degree in Software Engineering,
+                focusing on software development, system design, mobile applications,
+                databases, and full-stack technologies.
+            </p>
+        </div>
+    </article>
+
+    <article class="timeline-item reveal">
+        <div class="timeline-marker"><span></span></div>
+        <div class="timeline-period">2023 - 2024</div>
+        <div class="timeline-card glass-card spotlight">
+            <span>Diploma</span>
+            <h3>Level 3 Diploma in Information Technology</h3>
+            <h4>ESOFT Metro Campus · Pearson Qualification</h4>
+            <p>
+                Completed a comprehensive IT diploma covering programming,
+                databases, networking, software development, and computer systems.
+            </p>
+        </div>
+    </article>
+
+    <article class="timeline-item reveal">
+        <div class="timeline-marker"><span></span></div>
+        <div class="timeline-period">2023</div>
+        <div class="timeline-card glass-card spotlight">
+            <span>G.C.E Advanced Level</span>
+            <h3>Commerce Stream with ICT</h3>
+            <h4>Gurukula College, Kelaniya</h4>
+            <p>
+                Successfully completed Advanced Level studies in the Commerce stream
+                with Information and Communication Technology (ICT).
+            </p>
+        </div>
+    </article>
+
+    <article class="timeline-item reveal">
+        <div class="timeline-marker"><span></span></div>
+        <div class="timeline-period">2018</div>
+        <div class="timeline-card glass-card spotlight">
+            <span>G.C.E Ordinary Level</span>
+            <h3>8 A Passes and 1 B Pass</h3>
+            <h4>Gurukula College, Kelaniya</h4>
+            <p>
+                Achieved excellent academic results with 8 A grades and 1 B grade,
+                demonstrating strong performance across multiple subjects.
+            </p>
+        </div>
+    </article>
+
+</div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="contact-shell">
+        <div class="contact-copy reveal">
+          <div><span class="section-index">06</span><span class="section-label">Let’s connect</span></div>
+          <h2>Have an idea?<br><span class="gradient-text">Let’s build it.</span></h2>
+          <p>I’m open to internships, collaborations, freelance projects, and conversations with people building thoughtful products.</p>
+          <div class="contact-direct">
+            <a href="mailto:saniduharsha2002@gmail.com"><span>Email</span><strong>saniduharsha2002@gmail.com</strong><i>↗</i></a>
+            <a href="tel:+94787926703"><span>Phone</span><strong>+94 787 926 703</strong><i>↗</i></a>
+            <a href="https://wa.me/94787926703" target="_blank" rel="noreferrer"><span>WhatsApp</span><strong>Start a quick chat</strong><i>↗</i></a>
+          </div>
+        </div>
+
+        <form class="contact-form glass-card reveal" id="contactForm">
+          <div class="form-top"><span>Send a message</span><i class="status-dot"></i></div>
+          <label><span>Your name</span><input type="text" id="name" name="name" placeholder="How should I address you?" required></label>
+          <label><span>Your email</span><input type="email" id="email" name="email" placeholder="you@company.com" required></label>
+          <label><span>What can we build?</span><textarea id="message" name="message" rows="5" placeholder="Tell me a little about your idea or opportunity..." required></textarea></label>
+          <button class="button button-primary form-submit magnetic" type="submit"><span>Send message</span><i>↗</i></button>
+          <p class="form-note" id="formNote" role="status">This opens your preferred email app. No data is stored.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <a class="brand" href="#home"><span class="brand-mark">SH</span><span class="brand-copy">Sanidu Harsha<small>Software Engineering Student 2026</small></span></a>
+      <p>Designed and developed by Sanidu Harsha. 01.02.2026</p>
+      <div class="footer-socials">
+        <a href="https://github.com/sanidu2002" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/saniduharsha/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://www.facebook.com/share/14ZBczEakqB/" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/___saniduuu___zz?igsh=b3p2OWJ6em4zNWRw" target="_blank" rel="noreferrer">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="currentYear"></span> Sanidu Harsha</span><span>Colombo, Sri Lanka · <i class="status-dot"></i> Available for opportunities</span></div>
+  </footer>
+
+  <div class="floating-controls">
+    <button class="control-button music-toggle" type="button" aria-label="Toggle ambient sound" title="Ambient sound"><span>♫</span></button>
+    <button class="control-button palette-toggle" type="button" aria-label="Change accent color" title="Change accent"><span>◉</span></button>
+    <a class="control-button back-to-top" href="#home" aria-label="Back to top" title="Back to top"><span>↑</span></a>
+  </div>
+
+  <div class="accent-picker" aria-label="Theme color switcher">
+    <span>Choose accent</span>
+    <button class="accent-swatch active" style="--swatch:#7c3aed" data-accent="violet" aria-label="Violet accent"></button>
+    <button class="accent-swatch" style="--swatch:#06b6d4" data-accent="cyan" aria-label="Cyan accent"></button>
+    <button class="accent-swatch" style="--swatch:#ec4899" data-accent="pink" aria-label="Pink accent"></button>
+    <button class="accent-swatch" style="--swatch:#84cc16" data-accent="lime" aria-label="Lime accent"></button>
+  </div>
+
+  <div class="modal certificate-modal" id="certificateModal" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle" hidden>
+    <button class="modal-close" type="button" aria-label="Close certificate preview">×</button>
+    <div class="modal-content">
+      <span class="card-tag">Certificate preview</span>
+      <h2 id="certificateModalTitle">Certificate</h2>
+      <img src="" alt="">
+    </div>
+  </div>
+
+  <div class="modal command-modal" id="commandModal" role="dialog" aria-modal="true" aria-labelledby="commandTitle" hidden>
+    <div class="command-box">
+      <div class="command-input-wrap"><span>⌕</span><input id="commandInput" type="text" placeholder="Type a command or jump to..." autocomplete="off"><kbd>ESC</kbd></div>
+      <p id="commandTitle">Quick navigation</p>
+      <div class="command-list" id="commandList">
+        <button data-command-target="#home"><span>⌂</span><strong>Home</strong><kbd>H</kbd></button>
+        <button data-command-target="#about"><span>◎</span><strong>About me</strong><kbd>A</kbd></button>
+        <button data-command-target="#skills"><span>◇</span><strong>Skills</strong><kbd>S</kbd></button>
+        <button data-command-target="#projects"><span>▦</span><strong>Projects</strong><kbd>P</kbd></button>
+        <button data-command-target="#certificates"><span>✦</span><strong>Certificates</strong><kbd>C</kbd></button>
+        <button data-command-target="#contact"><span>↗</span><strong>Contact</strong><kbd>M</kbd></button>
+        <a href="assets/sanidu-harsha-cv.pdf" download><span>↓</span><strong>Download résumé</strong><kbd>R</kbd></a>
+      </div>
+      <div class="command-footer"><span>↑↓ Navigate</span><span>↵ Select</span><span>Esc Close</span></div>
+    </div>
+  </div>
+
+  <noscript><div class="noscript">JavaScript is disabled. The content remains available, but interactive effects need JavaScript.</div></noscript>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XD8YZ24NML"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-XD8YZ24NML');
-    </script>
-    
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="content-wrapper">
-
-    <nav id="navbar">
-        <a href="#home" class="logo">Sanidu<span>Harsha</span></a>
-        <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certificates">Certificates</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </nav>
-
-    <section id="home">
-        <div class="hero-content reveal">
-            <h3 class="reveal-up" style="--d: 0s">HELLO, WORLD!</h3>
-            <h1 class="reveal-up" style="--d: 0.1s">I'm Sanidu Harsha</h1>
-            <p class="reveal-up" style="--d: 0.2s">Software Engineering Student & Full-Stack Developer passionate about building modern, scalable, and user-friendly web and mobile applications. I enjoy developing complete solutions from intuitive frontend interfaces to efficient backend systems.</p>
-            <div class="hero-btns reveal-up" style="--d: 0.3s">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-outline">Contact Me</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2 class="section-title reveal">About Me</h2>
-        <div class="container">
-            <div class="about-grid">
-                <div class="profile-img-container reveal">
-                    <div class="profile-img">
-                        <img src="my.jpg" alt="Sanidu Harsha">
-                    </div>
-                </div>
-                <div class="about-text reveal">
-                    <p>I am a Software Engineering student with a strong passion for full-stack development and building complete software solutions. I enjoy designing intuitive user interfaces while also developing efficient backend systems that power real-world applications. My experience includes working with technologies such as HTML, CSS, JavaScript, Python, Flask, Kotlin, and databases to create scalable web and mobile applications.</p>
-                    <br>
-                    <p>Through university projects and personal work, I have developed applications ranging from full-stack web platforms to mobile apps, focusing on clean architecture, performance, and user-friendly design. I am continuously learning new technologies and improving my development skills to build innovative digital solutions that can make a meaningful impact.</p>
-                    
-                    <h3 style="margin-top: 30px; margin-bottom: 15px;">Technical Skills</h3>
-                    <div class="skills-container">
-                        <span class="skill-badge">HTML5 / CSS3</span>
-                        <span class="skill-badge">JavaScript (ES6+)</span>
-                        <span class="skill-badge">Flutter / Dart</span>
-                        <span class="skill-badge">UI/UX Design</span>
-
-                        <span class="skill-badge">Git / GitHub</span>
-                        <span class="skill-badge">Figma</span>
-                        <span class="skill-badge">Kotlin</span>
-                        <span class="skill-badge">Java</span>
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">MySQL</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="resume">
-        <div class="resume-container reveal">
-            <div class="resume-card">
-                <div class="resume-header">
-                    <div class="resume-icon-wrapper">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <h2>My Resume</h2>
-                    <p class="resume-subtitle">Download my CV and learn more about my skills, experience, and projects</p>
-                </div>
-                
-                <div class="resume-description">
-                    <p>I'm a Software Engineering student passionate about full-stack development and building innovative solutions. This resume showcases my technical expertise, project experience, certifications, and professional achievements in web and mobile development.</p>
-                    <div class="resume-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-code"></i>
-                            <span>Full-Stack Development</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Mobile Apps</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Continuous Learning</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resume-actions">
-                    <a href="saniduharsha.pdf" download="saniduharsha.pdf" class="btn btn-download">
-                        <i class="fas fa-download"></i> Download CV
-                    </a>
-                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title reveal">My Projects</h2>
-        <div class="grid">
-            <div class="card reveal project-card">
-                <img src="Personal Portfolio Website.JPG" alt="Personal Portfolio Website" class="project-image">
-                <div class="card-content">
-                    <div class="tech-stack">HTML • CSS • JavaScript</div>
-                    <h3>Personal Portfolio Website</h3>
-                    <p>Designed and developed a responsive portfolio to showcase projects, skills, and certifications. Implemented modern UI layout and interactive navigation using HTML, CSS, and JavaScript.</p>
-                    <div class="card-links">
-                        <a href="https://sanidu.site" class="btn btn-primary">Live Demo</a>
-                        <a href="https://github.com/sanidu2002/saniduharsha_site.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card reveal project-card">
-                <img src="SDGP Project.png" alt="SDGP Project" class="project-image">
-                <div class="card-content">
-                    <div class="tech-stack">Kotlin • Jetpack Compose • Django • PostgreSQL</div>
-                    <h3>SDGP Project: Grist</h3>
-                    <p>Grist is an AI-driven Android diet planning app for personalized nutrition tracking. Built modern UI with Jetpack Compose, consuming Django REST APIs backed by PostgreSQL; contributed navigation flows, UI components, and API integration.</p>
-                    <div class="card-links">
-                        <a href="https://grist.life" class="btn btn-primary">Project Website</a>
-                        <a href="https://www.sdgp.lk/project/8b7c8a60-8c4a-4adc-a237-de3b05044089" class="btn btn-primary">SDGP.lk</a>
-                        <a href="https://github.com/MaheenAbeysooriya/Grist.life-frontend.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card reveal project-card">
-                <img src="Recipe Finder Web Application.JPG" alt="Recipe Finder" class="project-image">
-                <div class="card-content">
-                    <div class="tech-stack">HTML • CSS • JS • Python • Flask • SQLite</div>
-                    <h3>Recipe Finder Web Application</h3>
-                    <p>Full-stack recipe search app with Flask backend and JavaScript frontend: integrated TheMealDB API for ingredient-based lookup, added favorites backed by SQLite for persistence, and exposed RESTful endpoints to manage searches and saved recipes.</p>
-                    <div class="card-links">
-                        <a href="https://github.com/sanidu2002/recipe-finder.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card reveal project-card">
-                <img src="Climate Action Awareness Website.JPG" alt="Climate Action" class="project-image">
-                <div class="card-content">
-                    <div class="tech-stack">HTML • CSS</div>
-                    <h3>Climate Action Awareness Website</h3>
-                    <p>Responsive group project that promotes climate action through educational sections, calls-to-action, and approachable visuals. I contributed frontend layouts and page development using semantic HTML and modern CSS.</p>
-                    <div class="card-links">
-                        <a href="https://sanidu2002.github.io/sanidu2002-Climate-Action-Website-Web-Development-group-Project/" class="btn btn-primary">Project Website</a>
-                        <a href="https://github.com/sanidu2002/sanidu2002-Climate-Action-Website-Web-Development-group-Project.git" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="certificates">
-        <h2 class="section-title reveal">Certifications</h2>
-        <div class="grid">
-            <div class="card reveal cert-card">
-                <img src="LinkedIn Learning Certificates.JPG" alt="LinkedIn Learning Certificates" class="cert-image-display">
-                <div class="card-content">
-                    <div class="cert-badge"><i class="fab fa-linkedin"></i> LinkedIn Learning</div>
-                    <h3>LinkedIn Learning Certificates</h3>
-                    <p>I have completed multiple certifications on LinkedIn Learning to improve my technical and professional skills. These courses enhanced my understanding of web development technologies and programming concepts.</p>
-                    <div class="cert-info">
-                        <p><strong>Courses:</strong></p>
-                        <ul>
-                            <li>Python Programming Foundations: Fundamentals</li>
-                            <li>Python Quick Start</li>
-                        </ul>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://www.linkedin.com/in/saniduharsha/" class="btn btn-primary">View Certificates</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card reveal cert-card">
-                <img src="Level 3 Diploma in Information Technology.jpeg" alt="Level 3 Diploma in Information Technology" class="cert-image-display">
-                <div class="card-content">
-                    <div class="cert-badge"><i class="fas fa-graduation-cap"></i> Pearson</div>
-                    <h3>Level 3 Diploma in Information Technology</h3>
-                    <p>Completed a comprehensive diploma covering programming, databases, networking, and computer systems, building a solid foundation for Software Engineering.</p>
-                    <div class="cert-info">
-                        <p><strong>Institution:</strong> ESOFT Metro Campus<br>
-                        <strong>Awarding Body:</strong> Pearson<br>
-                        <strong>Level:</strong> Level 3 Diploma</p>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7313828582210838528/?originTrackingId=IwG5KBG2VwOEp%2BLnpe%2FVAw%3D%3D" class="btn btn-primary">View Certificate</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card reveal cert-card">
-                <img src="Python for Beginners.JPG" alt="Python for Beginners Certificate" class="cert-image-display">
-                <div class="card-content">
-                    <div class="cert-badge"><i class="fas fa-code"></i> University of Moratuwa</div>
-                    <h3>Python for Beginners</h3>
-                    <p>Foundational Python course covering programming fundamentals, data structures, and best practices as part of the Trainee - Full Stack Developer program.</p>
-                    <div class="cert-info">
-                        <p><strong>Institution:</strong> University of Moratuwa<br>
-                        <strong>Program:</strong> Trainee - Full Stack Developer<br>
-                        <strong>Focus:</strong> Python Fundamentals</p>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://open.uom.lk/lms/mod/customcert/verify_certificate.php" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card reveal cert-card">
-                <img src="Machine learning for beginers.jpg" alt="Machine Learning for Beginners Certificate" class="cert-image-display">
-                <div class="card-content">
-                    <div class="cert-badge"><i class="fas fa-brain"></i> Sololearn</div>
-                    <h3>Machine Learning for Beginners</h3>
-                    <p>Comprehensive course covering fundamental machine learning concepts, algorithms, and practical applications for real-world problem solving.</p>
-                    <div class="cert-info">
-                        <p><strong>Institution:</strong> Sololearn<br>
-                        <strong>Course:</strong> Machine Learning for Beginners<br>
-                        <strong>Skills:</strong> ML Fundamentals, Algorithms</p>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://www.sololearn.com/en/certificates/CC-TKPARHVX" class="btn btn-primary">View Certificate</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title reveal">Let's Work Together</h2>
-        <div class="contact-container reveal">
-            <div class="contact-intro">
-                <p>I'm always excited to hear about new projects and opportunities. Whether you have a question, want to discuss a collaboration, or just want to say hello, feel free to reach out!</p>
-            </div>
-
-            <div class="contact-wrapper">
-                <div class="contact-form-container">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <input 
-                                type="text" 
-                                id="name" 
-                                placeholder="Your Name" 
-                                required
-                                class="form-input"
-                            >
-                            <label for="name" class="form-label">Name</label>
-                        </div>
-
-                        <div class="form-group">
-                            <input 
-                                type="email" 
-                                id="email" 
-                                placeholder="Your Email" 
-                                required
-                                class="form-input"
-                            >
-                            <label for="email" class="form-label">Email</label>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea 
-                                id="message" 
-                                placeholder="Your Message" 
-                                rows="6"
-                                required
-                                class="form-input form-textarea"
-                            ></textarea>
-                            <label for="message" class="form-label">Message</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-send">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
-                </div>
-
-                <div class="contact-info-sidebar">
-                    <div class="info-card">
-                        <i class="fas fa-envelope"></i>
-                        <h4>Email</h4>
-                        <p><a href="mailto:saniduharsha2002@gmail.com">saniduharsha2002@gmail.com</a></p>
-                    </div>
-
-                    <div class="info-card">
-                        <i class="fas fa-phone"></i>
-                        <h4>Phone</h4>
-                        <p><a href="tel:+94787926703">+94 787 926 703</a></p>
-                    </div>
-
-                    <div class="info-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h4>Location</h4>
-                        <p>Sri Lanka</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="social-links" style="margin-top: 50px;">
-                <a href="https://wa.me/94787926703" class="social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.facebook.com/share/14ZBczEakqB/" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/___saniduuu___zz?igsh=b3p2OWJ6em4zNWRw" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/sanidu2002" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/saniduharsha/" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Sanidu Harsha.</p>
-    </footer>
-
-    </div>
-
-    <!-- External JavaScript -->
-    <script src="script.js"></script>
+  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>

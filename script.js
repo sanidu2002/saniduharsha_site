@@ -408,7 +408,7 @@ contactForm?.addEventListener("submit", (event) => {
   const note = $("#formNote");
   note.textContent = "Your email app is opening. Thanks for reaching out.";
   note.classList.add("success");
-  window.location.href = `mailto:saniduharsha2002@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:sanidu.20241750@iit.ac.lk?subject=${subject}&body=${body}`;
   window.setTimeout(() => {
     note.textContent = "This opens your preferred email app. No data is stored.";
     note.classList.remove("success");

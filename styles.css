@@ -529,7 +529,7 @@ button { color: inherit; }
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 50%;
+  width: 100%;
   max-width: 260px;
 }
 
@@ -543,7 +543,7 @@ button { color: inherit; }
   min-height: 46px;
   padding: 0 20px;
   border-radius: 13px;
-  border: 5px solid transparent;
+  border: 1px solid transparent;
   font-family: "Manrope", sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
@@ -560,13 +560,13 @@ button { color: inherit; }
 
 /* Streamlabs Button Color */
 .streamlabs-btn {
-  background: #f2f3f3;
+  background: #31c3a6;
   color: #0b1d1a;
   box-shadow: 0 8px 20px rgba(49, 195, 166, 0.2);
 }
 
 .streamlabs-btn:hover {
-  background: #00ffcc;
+  background: #2bb096;
   box-shadow: 0 12px 28px rgba(49, 195, 166, 0.35);
 }
 
@@ -615,6 +615,6 @@ button { color: inherit; }
   }
   
   .donation-buttons {
-    max-width: 5%;
+    max-width: 100%;
   }
 }
